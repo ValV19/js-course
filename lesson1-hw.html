@@ -1,0 +1,97 @@
+﻿<!-- 
+    1. По координатам двух точек, которые вводит пользователь, определить уравнение прямой, проходящей через эти точки.
+    Общий вид уравнения: y = kx + b; где k = (y1 - y2) / (x1 - x2), b = y2 - k*x2.
+    
+    2. Обменять значения двух переменных, используя третью (буферную) переменную.
+    
+    3. Объявите две переменные: admin и name. Запишите в name строку "Василий". Замените значение из name в admin. Выведите admin.
+    
+    4. Получить от пользователя данные о пользователе: имя, фамилию, возраст. Обработать их и вывести на экран.
+    
+    5. Запросите у пользователя его возраст, после чего выведите на экран модальное окно с вопросом: "Ваш возраст ...(введеное пользователем число) лет?". Далее в зависимости от выбора пользователя выводится модальное окно с информацией true или false.
+-->
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>homework-1</title>
+    <script type="text/javascript">
+    </script> 
+</head>
+<body>
+    <ul>
+        <li></li>
+        <li></li>
+    </ul>
+
+    <script>
+
+        // -------------------task-1---
+        console.log('...task-1');
+        var x1 = 4;
+        var y1 = 6;
+        var x2 = 3;
+        var y2 = 1;
+        var k = (y1 - y2) / (x1 - x2);
+        var b = y2 - k*x2;  
+        console.log('y = ' + k + 'x + ' + b);
+
+        // -------------------task-2---
+        console.log('...task-2');
+        console.log('x1 = ' + x1 + '; ' + 'x2 = ' + x2);
+        var q = x1;
+        x1 = x2;
+        x2 = q;
+        console.log('x1 = ' + x1 + '; ' + 'x2 = ' + x2);
+
+        // -------------------task-3---
+        console.log('...task-3');
+        var name = 'Vasiliy';
+        var admin = name;
+        console.log(admin);
+
+        // -------------------task-4---
+        console.log('...task-4');
+        var fName = prompt('input FirstName');
+        document.write('FirstName:' + ' ' + fName + '; <br> ');
+
+        var lName = prompt('input LastName');
+        document.write('LastName:' + ' ' + lName + '; <br> ');
+
+        var age = prompt('input age');
+        document.write('age:' + ' ' + age);
+        console.log('done');
+
+        // -------------------task-5---
+        console.log('...task-5');
+        var answer = confirm('your age' + ' ' + age + ' ' + 'year?');
+        console.log('done');
+
+        // -------------------task-6---
+        console.log('...task-6');
+        document.write('<h1>' + fName + ' ' + lName + '</h1>');
+
+        var hobby1 = prompt('your hobby1');
+        var hobby2 = prompt('your hobby2');
+        var hobby3 = prompt('your hobby3');
+        document.write('<ul><li>' + hobby1 + '</li><li>' + hobby2 + '</li><li>' + hobby3 + '</li></ul>');
+
+        var random = prompt('input random number');
+        var numberSumm = +random + 13;
+        console.log(numberSumm);
+        document.write('<span>random =' + ' ' + random + '<br>' + 'random + 13 =' + ' ' + numberSumm + '</span>');
+        console.log('done');
+
+        // -------------------task-7---
+        console.log('...task-7');
+        var street = prompt('input street');
+        var number = prompt('input number');
+        var city = prompt('input city');
+
+        document.write('<br><br>');
+        document.write('<table border="1"><tr><th>' + 'street' + '</th><td>' + street + '</td></tr><tr><th>' + 'number' + '</th><td>' + number + '</td></tr><tr><th>' + 'city' + '</th><td>' + city + '</td></tr></table>');
+        console.log('done');
+
+    </script>
+</body>
+</html>
