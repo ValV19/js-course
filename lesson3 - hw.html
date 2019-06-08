@@ -1,0 +1,136 @@
+﻿<!-- 
+    1. Сделать собственные примеры методов применяемых для массивов.
+
+    2. Создать программу, выполняющую вставку элемента в массив после элемента, значение которого укажет пользователь.
+
+    3. Создать многомерный массив, размер массива получить от пользователя. Каждый нечётный подмассив заполнить значением 'odd', а чётный - 'even'. Размер каждого вложенного массива - 3.
+
+    4. Создать два произвольных массива: один массив - любимая спортивная команда / модели автомобилей / города, во втором - количество игроков в команде / объем двигателя / количество жителей в городе. Объединить данные из двух массивов и вывести их в одну строку. 
+    
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Lesson3-hw</title>
+  
+    <script>
+
+      //******************* task-1 ******************** 
+      console.log('task-1');
+      document.write('task-1' + '<br/>');
+      var fruits = ['apple', 'peach', 'apricot', 'banana', 'orange'];
+      var berries = ['strawberry', 'raspberry', 'blackberry'];
+                 
+      console.log(fruits);
+      console.log(berries);
+      console.log('*************');
+      document.write(fruits + '<br/>');
+      document.write(berries + '<br/><br/>');
+      
+      //***************concat
+      console.log('--concat--');
+      var fruitsBerries = fruits.concat(berries);
+      console.log(fruitsBerries);
+      document.write('concat) ' + fruitsBerries + '<br/></br/>');
+
+      //***************reverse
+      console.log('--reverse--');
+      fruitsBerries = fruitsBerries.reverse(fruitsBerries);
+      console.log(fruitsBerries);
+      document.write('reverse) ' + fruitsBerries + '<br/></br/>');
+
+      //*************slice
+      console.log('--slice--');
+      var partFruits = fruits.slice(1,4);
+      console.log(partFruits);
+      document.write('slice1) ' + partFruits + '<br/>');
+      
+      var partBerries = berries.slice(1);
+      console.log(partBerries);
+      document.write('slice2) ' + partBerries + '<br/></br/>');
+
+      //*****************sort
+      console.log('--sort--');
+      fruitsBerries = fruitsBerries.sort();
+      console.log(fruitsBerries);
+      document.write('sort) ' + fruitsBerries + '<br/></br/>');
+
+      //****************pop
+      console.log('--pop--');
+      var fB = fruitsBerries;
+      var deletedFb = fB.pop(); 
+      console.log(fB);
+      console.log(deletedFb);
+      console.log(fB.length);
+      document.write('pop) ' + fB + '<br/>');
+      document.write('pop deleted) ' + deletedFb + '<br/>');
+      document.write('pop lengnh) ' + fB.length + '<br/>');
+
+
+      //******************* task-2 ******************** 
+      document.write('<br/><br/><br/><br/>');
+      console.log('task-2');
+      document.write('task-2' + '<br/>');
+      var fruits = ['apple', 'pear', 'apricot', 'lemon', 'banana', 'orange'];
+      console.log('fruits: ' + fruits);
+      console.log('length fruits: ' + fruits.length); 
+      document.write('fruits before:' + '<br/>' + fruits + '<br/><br/>');
+
+      var answer = prompt('какой фрукт надо добавить?');
+      console.log(answer);
+      var number = prompt('после какого элемента?');
+      console.log(number);
+
+      fruits.splice(number, 0, answer);
+      console.log('fruits after: ' + fruits);
+      console.log('length fruits after: ' + fruits.length);
+      document.write('fruits after:' + '<br/>' + fruits + '<br/>');
+
+
+      //******************* task-3 ******************** 
+      document.write('<br/><br/><br/><br/>');
+      document.write('task-3' + '<br/>');
+      console.log('task-3');
+      var size = prompt('Укажите длину массива');
+
+      for (var i = 0; i < size; i++) {
+        var n = i % 2;
+        console.log('n = ' + n);
+
+        if (n == 0) {
+          for (j = 0; j < 3; j++) {
+            document.write('even' + ' ');
+            console.log('even');
+          };
+          document.write('<br/> ');
+        } else if (n == 1) {
+          for (j = 0; j < 3; j++) {
+            document.write('odd' + ' ');
+            console.log('odd');
+          };
+          document.write('<br/> ');
+        };
+      };
+        
+
+      //******************* task-4 ******************** 
+      document.write('<br/><br/><br/><br/>');
+      document.write('task-4' + '<br/>');
+      console.log('task-4');
+
+      var city = ['Kyiv', 'Paris', 'Berlin', 'London', 'New-York'];
+      var people = [4000000, 5000000, 6000000, 3500000, 8000000];
+      var cityPeople = new Array();
+      
+      for (var i = 0; i < 5; i++) {
+        cityPeople[i] = (city[i] + ', ' + people[i]);
+      };
+
+      var cP = cityPeople.join(' / ');
+      document.write(cP); 
+    
+    </script>
+</head>
+<body>
+</body>
+</html>
