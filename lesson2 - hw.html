@@ -1,0 +1,154 @@
+﻿<!-- 
+    1. Среди трех чисел найти среднее арифметическое. Если среди чисел есть равные, вывести сообщение "Ошибка". Числа принять от пользователя.
+
+    2. Построить прямоугольный треугольник состоящий из символа "*".
+
+    3. Определить какое из трех, введенных пользователем, чисел максимальное и вывести его на экран.
+
+    4. Дано два числа A и B где (A<B). 
+    Выведите на экран суму всех чисел расположенных в числовом промежутке от А до В. 
+    Выведите на экран все нечетные значения, расположенные в числовом промежутке от А до В.   
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script type="text/javascript">
+
+        //****************************
+        console.log('classwork-1');
+        document.write('classwork-1' + '<br/>');
+
+        var num = +prompt("Please enter your size (number) of clothes");
+        document.write('your size is ');
+        switch (num) {
+            case (num = 5):
+                console.log("Tiny");
+                document.write('Tiny' + '<br/>');
+                break;
+
+            case (num = 10):
+                console.log("Small");
+                document.write('Small' + '<br/>');
+                break;
+
+            case (num = 15):
+                console.log("Medium");
+                document.write('Medium' + '<br/>');
+                break;
+
+            case (num = 20):
+                console.log("Large");
+                document.write('Large' + '<br/>');
+                break;
+
+            case (num = 25):
+                console.log("Huge");
+                document.write('Huge' + '<br/>');
+                break;
+
+            default:
+                console.log("your size is't correct");
+                document.write(' not correct' + '<br/>');
+                break;
+        }
+
+        //**************************************
+        console.log('classwork-2');
+        document.write('<br/>' + 'classwork-2' + '<br/>');
+        document.write('print numbers [0, 10]' + '<br/>');
+
+        for (var i = 0; i<=10; i++) {
+            console.log('i = ' + i)
+            document.write('i = ' + i + '<br/>');
+        }
+
+        //*********************************************
+        console.log('task-hw-1');
+        document.write('<br/>' + 'task-hw-1' + '<br/>' + 'среднее арифметическое чисел' + '<br/>');
+        alert('ищем среднее арифметическое 3-х чисел');
+
+        var a = prompt('input a');
+        console.log('a = ' + a);
+        var b = prompt('input b');
+        console.log('b = ' + b);
+        var c = prompt('input c');
+        console.log('c = ' + c);
+
+        if (a == b || a == c || b == c) {
+            console.log('Ошибка');
+            document.write('Ошибка! Одинаковые числа' + '<br/>');
+        } else {
+            var average = (+a + +b + +c) / 3;
+            console.log('average = ' + average);
+            document.write('average = ' + average + '<br/>');
+        };
+
+        //*********************************************
+        console.log('task-hw-2');
+        document.write('<br/>' + 'task-hw-2' + '<br/>');
+        alert('строим прямоугольный треугольник из символов');
+
+        var a = prompt('input length triangle a');
+        for (var i = 1; i <= a; i++) {
+            for (var j = 1; j <= i; j++) {
+                document.write('* ');
+            }
+            document.write('<br/>');
+        };
+        console.log('triangle is done');
+
+        //***********************************************
+        console.log('task-hw-3');
+        document.write('<br/>' + 'task-hw-3' + '<br/>');
+        alert('определяем наибольшее число из 3-х чисел');
+
+        var a = prompt('input a');
+        console.log('a = ' + a);
+        var b = prompt('input b');
+        console.log('b = ' + b);
+        var c = prompt('input c');
+        console.log('c = ' + c);
+
+        max = a;
+        if (max < b) {
+            max = b;
+        }  // здесь надо " ; " ?
+        if (max < c) {
+            max = c;
+        }; 
+        console.log('max = ' + max)
+        document.write('max = ' + max + '<br/>');
+
+        //***********************************
+        console.log('task-hw-4');
+        document.write('<br/>' + 'task-hw-4' + '<br/>');
+        alert('находим сумму чисел и нечетные числа интервала [a, b]');
+
+        var a = prompt('input a');
+        console.log('a = ' + a);
+        var b = prompt('input b');
+        console.log('b = ' + b);
+        document.write('a = ' + a + ', b = ' + b + '<br/>');
+        var S = +0;
+        
+        for (i = a; i <= b; i++) {
+            S = S + +i;
+            console.log('i = ' + i + '; ' + 'S = ' + S);
+        };
+        document.write('S = ' + S);
+
+        document.write('<br/>' + 'нечетные числа:' + '<br/>');
+        for (i = a; i <= b; i++) {            
+            var n = i % 2;
+            console.log('i = ' + i + ', n = ' + n);
+            if (n == 1) {
+                console.log('i - нечет,' + i);
+                document.write(i + ' ');
+            }
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>
