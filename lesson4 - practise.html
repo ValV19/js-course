@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Practise_Lesson4</title>
+</head>
+<body>
+    <!-- 
+        1. Напишите функцию, которая принимает массив в качестве аргумента. Используя slice (), извлеките информацию из массива аргументов и верните новый массив, содержащий элементы «warm» и «sunny».
+
+        ['cold', 'rainy', 'warm', 'sunny', 'cool', 'thunderstorms']
+
+        ########
+
+        2. Напишите функцию подсчета градусов Фаренгейта при входящем параметре температуры в цельсиях.
+        Алгоритм пересчета из градусов Цельсия в градусы Фаренгейта - это температура в градусах Цельсия, умноженная на 9/5 плюс 32.         
+
+        ########
+
+        3. Напишите функцию которая бы переворачивала предоставленную строку
+        Возможно, вам придется превратить строку в массив, прежде чем вы можете обратить его. 
+        Ваш результат должен быть строкой.
+        "something"
+
+        ########
+
+        4. Напишите функцию которая возвращает длину самого длинного слова в предложении. 
+        Ваш ответ должен быть числом.
+        "The quick brown fox jumped over the lazy dog"
+     -->
+
+    <script>
+
+        //---------------task-1----------------
+        console.log('--task-1--');
+
+        function today () {
+            var weather =  ['cold', 'rainy', 'warm', 'sunny', 'cool', 'thunderstorms'];
+            var day = weather.slice(a,b);
+            console.log('today is ' + day);
+        }
+
+        var a = 2;
+        var b = 4;
+
+        today();
+
+        
+        //---------------task-2----------------
+        console.log('--task-2--');
+       
+        function farengate() {
+            return celsiy * 9 / 5 + 32;
+        }
+
+        var celsiy = prompt('input temperature on Celsiy');
+        var result = farengate(celsiy);
+
+        console.log('temperature on Farengate = ' + result);
+
+
+        //---------------task-3----------------
+        console.log('--task-3--');
+
+        function reversStroka () {
+            var newStroka = stroka.split('');
+            console.log('stroka = ' + stroka);
+            var revStroka =  newStroka.reverse();
+            var lastStroka = revStroka.join('');
+            console.log('lastStroka = ' + lastStroka);            
+        }
+
+        var stroka = prompt('введите строку');
+        reversStroka(stroka);
+        
+
+        //---------------task-4----------------
+        console.log('--task-4--');
+
+        function wordsLen () {
+            var textArray = text.split(' ');
+            var words = textArray.length;
+
+            console.log('text = ' + text);
+            console.log('textArray = ' + textArray);
+
+            for (var i = 0; i < words; i++) {
+                if (maxLength < textArray[i].length) {
+                    maxLength = textArray[i].length;
+                }
+            }
+            console.log('maxLength of word = ' + maxLength);
+        }
+
+        var text = prompt('input text');
+        var maxLength = 1;
+
+        wordsLen(text);
+     
+    </script>
+
+</body>
+</html>
