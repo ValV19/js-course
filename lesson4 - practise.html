@@ -36,50 +36,47 @@
         //---------------task-1----------------
         console.log('--task-1--');
 
-        function today () {
+        function today(a,b) {
             var weather =  ['cold', 'rainy', 'warm', 'sunny', 'cool', 'thunderstorms'];
             var day = weather.slice(a,b);
             console.log('today is ' + day);
-        }
+        };
 
         var a = 2;
         var b = 4;
-
-        today();
+        today(a,b);
 
         
         //---------------task-2----------------
         console.log('--task-2--');
        
-        function farengate() {
+        function farengate(celsiy) {
             return celsiy * 9 / 5 + 32;
-        }
+        };
 
         var celsiy = prompt('input temperature on Celsiy');
         var result = farengate(celsiy);
 
         console.log('temperature on Farengate = ' + result);
 
-
         //---------------task-3----------------
         console.log('--task-3--');
 
-        function reversStroka () {
+        function reversStroka (stroka) {
             var newStroka = stroka.split('');
             console.log('stroka = ' + stroka);
             var revStroka =  newStroka.reverse();
             var lastStroka = revStroka.join('');
             console.log('lastStroka = ' + lastStroka);            
-        }
+        };
 
         var stroka = prompt('введите строку');
         reversStroka(stroka);
-        
 
         //---------------task-4----------------
         console.log('--task-4--');
 
-        function wordsLen () {
+        function wordsLen(text) {
             var textArray = text.split(' ');
             var words = textArray.length;
 
@@ -92,11 +89,10 @@
                 }
             }
             console.log('maxLength of word = ' + maxLength);
-        }
+        };
 
         var text = prompt('input text');
         var maxLength = 1;
-
         wordsLen(text);
      
     </script>
