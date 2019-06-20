@@ -342,36 +342,36 @@
         console.log(directorGenre);
 
 
-    // 7.  Массив watchList содержит объекты с информацией о нескольких фильмах. Используйте filter и map для возврата нового массива объектов только с title и rating, но где imdbRating больше или равен 8.0.
+        // 7.  Массив watchList содержит объекты с информацией о нескольких фильмах. Используйте filter и map для возврата нового массива объектов только с title и rating, но где imdbRating больше или равен 8.0.
 
-    console.log('---task-7---');
+        console.log('---task-7---');
 
-    var newArray = watchList.filter(function(item) {
-        return item["imdbRating"] >= 8;
-    }).map (function(item) {
+        var newArray = watchList.filter(function(item) {
+            return item["imdbRating"] >= 8;
+        }).map (function(item) {
 
-        return {
-            "Title" : item["Title"],
-            "imdbRating" : item["imdbRating"],
-        };
-    });
-    console.log(newArray);
+            return {
+                "Title" : item["Title"],
+                "imdbRating" : item["imdbRating"],
+            };
+        });
+        console.log(newArray);
 
-    // ************************************
-    var newArray = watchList.filter(function(item) {
-        return item["Year"] < 2010;
-    }).map(function(item) {
+        // ************************************
+        var newArray = watchList.filter(function(item) {
+            return item["Year"] < 2010;
+        }).map(function(item) {
+            
+            return {
+                "Year" : item["Year"],
+                "Title" : item["Title"],
+                "Writer" : item["Writer"],
+            };
+        });
+        console.log(newArray);
+
+        // 8. Массив watchList содержит объекты с информацией о нескольких фильмах. Используйте reduce, чтобы найти средний рейтинг IMDB фильмов, снятых режиссером Кристофером Ноланом. Вспомните из предыдущих заданий filter и map. Вам может потребоваться создать другие переменные, но сохраните окончательное среднее значение в переменную AverageRating. Обратите внимание, что значения рейтинга сохраняются в виде строк в объекте и должны быть преобразованы в числа, прежде чем они будут использованы в любых математических операциях.
         
-        return {
-            "Year" : item["Year"],
-            "Title" : item["Title"],
-            "Writer" : item["Writer"],
-        };
-    });
-    console.log(newArray);
-
-    // 8. Массив watchList содержит объекты с информацией о нескольких фильмах. Используйте reduce, чтобы найти средний рейтинг IMDB фильмов, снятых режиссером Кристофером Ноланом. Вспомните из предыдущих заданий filter и map. Вам может потребоваться создать другие переменные, но сохраните окончательное среднее значение в переменную AverageRating. Обратите внимание, что значения рейтинга сохраняются в виде строк в объекте и должны быть преобразованы в числа, прежде чем они будут использованы в любых математических операциях.
-    
                 // этот пример был в задании !!!!
                 // var averageRating = watchList
                 //     .map(a => { return {director: a["Director"], rate: a["imdbRating"]}})
@@ -379,35 +379,30 @@
                 //     .reduce( (a, b, arr) => { return (a + b) / arr.length});
 
 
-    console.log('---task-8---');
+        console.log('---task-8---');
 
-    var sum = 0;
-    var count = 0;
+        var sum = 0;
+        var count = 0;
 
-    var averageCount = watchList.filter(function(item) {
-        return item["Director"] == "Christopher Nolan"
-    }).map(function(item) {
-        count++;
-        return count
-    });
-    
-    var averageRating = watchList.filter(function(item) {
-        return item["Director"] == "Christopher Nolan"
-    }).reduce(function(sum, item, count) {
-        count++;
-        console.log('count = ' + count);
-        console.log(sum + +item["imdbRating"]);
-        return (sum + +item["imdbRating"]) ;
-    }, 0);
+        var averageCount = watchList.filter(function(item) {
+            return item["Director"] == "Christopher Nolan"
+        }).map(function(item) {
+            count++;
+            return count
+        });
+        
+        var averageRating = watchList.filter(function(item) {
+            return item["Director"] == "Christopher Nolan"
+        }).reduce(function(sum, item, count) {
+            count++;
+            console.log('count = ' + count);
+            console.log(sum + +item["imdbRating"]);
+            return (sum + +item["imdbRating"]) ;
+        }, 0);
 
-    averageRating = averageRating / count;  
-    console.log('count films = ' +  count);
-    console.log('averageRating = ' + averageRating);
-   
-    
-    
-    
-    
+        averageRating = averageRating / count;  
+        console.log('count films = ' +  count);
+        console.log('averageRating = ' + averageRating);
     
     </script>
 
