@@ -386,22 +386,18 @@
 
         var averageCount = watchList.filter(function(item) {
             return item["Director"] == "Christopher Nolan"
-        }).map(function(item) {
-            count++;
-            return count
         });
-        
+        console.log("Number of objects: " + averageCount.length);        
+       
         var averageRating = watchList.filter(function(item) {
             return item["Director"] == "Christopher Nolan"
         }).reduce(function(sum, item, count) {
-            count++;
-            console.log('count = ' + count);
             console.log(sum + +item["imdbRating"]);
             return (sum + +item["imdbRating"]) ;
         }, 0);
-
-        averageRating = averageRating / count;  
-        console.log('count films = ' +  count);
+        
+        console.log('sum rating of objects: ',averageRating);
+        averageRating = averageRating / averageCount.length;
         console.log('averageRating = ' + averageRating);
     
     </script>
