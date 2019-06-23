@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        // Дана строка, нужно написать функцию, которая позволяет вернуть значение true, если строка является палиндромом, и false — если нет. При этом нужно учитывать пробелы и знаки препинания.
+        // Палиндром — слово, предложение или последовательность символов, которая абсолютно одинаково читается как в привычном направлении, так и в обратном. К примеру, “Anna” — это палиндром, а “table” и “John” — нет.
+
+        var text = prompt('input text');
+        console.log('text: ', text); 
+        
+        function palindrom(text) {
+
+            text = text.toLowerCase();           // переводим текст в нижний регистр
+            console.log('text to Lower Case: ', text); 
+
+            var stroka = text.split('');         // создаем новый массив из текста
+            console.log('text => array: ', stroka); 
+
+            stroka = stroka.reverse();           // реверс массива
+            console.log('reverse array: ', stroka);
+
+            stroka = stroka.join('');            // переводим массив в текст
+            console.log('array => text: ', stroka);
+
+            if (text === stroka) {
+                return true;
+            } else {
+                return false;
+            };
+        };               
+        console.log('Is it polindrom? ' + palindrom(text));   
+    
+    </script>
+
+</body>
+</html>
