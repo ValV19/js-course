@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿<!-- 
   
     
@@ -248,3 +249,248 @@
 
    </body>
    </html>
+=======
+
+     <!DOCTYPE html>
+     <html xmlns="http://www.w3.org/1999/xhtml">
+     <head>
+      <title></title>
+
+    </head>
+    <body>
+
+      <script>
+         
+         // -----------task-1---------------
+         // 1. Создать объект Point, содержащий два свойства: "x" и "y" — координаты точки, и метод GetQuadrant, вычисляющий,
+         //  в каком квадранте в декартовой системе координат находится данная точка.
+         //  Протестируйте данный объект, изменяя значения его координат, и повторно вызавая метод GetQuadrant.
+         
+         console.log('task-1');
+         alert('в каком квадранте в декартовой системе координат находится данная точка?');
+
+         var x, y;
+         var Point = {
+            x,
+            y,
+            GetQuadrant(x,y) {
+               this.x = +prompt('input x');
+               // проверка х
+               if (this.x == "") {
+                  console.log('less info');
+                  this.x = +prompt('you input nothing, input x again');
+               };               
+               if (!isNaN(+this.x)) {
+                  console.log('is number');
+               } else {
+                  console.log('is not number');
+                  this.x = +prompt('input x as number');
+               };
+               
+               this.y = +prompt('input y');
+               // проверка у
+               if (this.y == "") {
+                  console.log('less info');
+                  this.y = +prompt('you input nothing, input y again');
+               };
+               if (!isNaN(+this.y)) {
+                  console.log('is number');
+               } else {
+                  console.log('is not number');
+                  this.y = +prompt('input y as number');
+               };
+
+               // вывод х, у
+               console.log('x =', this.x, 'y =', this.y);
+
+               // проверка условий и вывод результата
+               if (this.x == 0 || this.y == 0) {
+                  console.log('you input 0, point belongs to the axis');
+               };
+               if (this.x > 0 && this.y > 0) {
+                  console.log('this point is in I quadrant');
+               };
+               if (this.x < 0 && this.y > 0) {
+                  console.log('this point is in II quadrant');
+               };
+               if (this.x < 0 && this.y < 0) {
+                  console.log('this point is in III quadrant');
+               };
+               if (this.x > 0 && this.y < 0) {
+                  console.log('this point is in IV quadrant');
+               };
+            }
+         };
+         Point.GetQuadrant(x, y);
+
+         // -----------task-2---------------
+         //  2. Создать объект Calculator, который должен содержать методы для расчета суммы, разности, произведения и частного двух чисел.
+         //  Протестировать данный объект, принимая от пользователя значения двух операндов и знак операции.
+         //  В зависимости от принятого знака операции, вызвать соответствующий метод.         
+
+         console.log('task-2');
+         alert('Протестировать Calculator, принимая от пользователя значения двух операндов и знак операции');
+
+         var x, y, mathSymbol, result;
+         x = +prompt('input x');
+         if (x == "") {
+            console.log('less info');
+            x = +prompt('you inputed nothing, input x again');
+         };               
+         if (!isNaN(+x)) {
+            console.log(x, 'is number');
+         } else {
+            console.log('is not number');
+            x = +prompt('input x as number');
+         };
+
+         mathSymbol = prompt('input mathSymbol');
+       
+         y = +prompt('input y');
+         if (y == "") {
+            console.log('less info');
+            y = +prompt('you inputed nothing, input y again');
+         };               
+         if (!isNaN(+y)) {
+            console.log(y, 'is number');
+         } else {
+            console.log('is not number');
+            y = +prompt('input y as number');
+         };
+
+         var Calculator = {
+            x,
+            y,
+            mathSymbol,
+            
+            add(x, y) {
+               result = this.x + this.y;
+               return result;
+            },
+            sub(x, y) {
+               result = this.x - this.y;
+               return result;
+            },
+            mult(x, y) {
+               result = this.x * this.y;
+               return result;
+            },
+            div(x, y) {
+               result = this.x / this.y;
+               return result;
+            },       
+            default(x, y) {
+               result = 'mathSymbol is not correct';
+               return result;
+            }
+         };
+
+         if (mathSymbol == "+") {
+            console.log(Calculator.add(x, y));
+         } else if (mathSymbol == "-") {
+            console.log(Calculator.sub(x, y));
+         } else if (mathSymbol == "*") {
+            console.log(Calculator.mult(x, y));
+         } else if (mathSymbol == "/") {
+            console.log(Calculator.div(x, y));
+         } else {
+            console.log(Calculator.default(x, y));
+         };
+
+         // -----------task-3---------------
+         
+         //  3. Создать массив, который будет хранить в себе информацию о сотрудниках предприятия. Каждый элемент масива — объект,
+         //     содержащий свойства: name, sName, age, occupation, и метод show, который выводит всю информацию о пользователе.
+         //     Реализовать заполнение массива пользователем. По окончанию заполнения — вывести информацию о сотрудниках.
+         
+         //  4. Для предыдущего задания создайте функцию, которая будет принимать в себя массив объектов-сотрудников, и каждому из объектов
+         //     будет добавлять новое свойство "salary", хранящее зарплату сотрудника. 
+         //     Зарплата расчитывается, исходя из значения свойства "occupation" следующим образом:
+         //         • "director" — 3000;
+         //         • "manager" — 1500;
+         //         • "programmer" — 2000;
+         //         • для остальных значений — 1000.
+         //     После выполнения функции — вывести информацию о сотрудниках.
+               
+         //  5. Для задания 3 создать метод, позволяющий отсортировать массив сотрудников по одному из свойств: name, sName, age, occupation, salary.
+         //     Параметр для сортировки принимается от пользователя.
+         //     После выполнения функции — вывести информацию о сотрудниках.
+
+         console.log('task-3');
+         var workers = new Array();
+         alert('Создать массив, который будет хранить в себе информацию о сотрудниках предприятия')
+
+         do {
+            var workerFirstName = prompt('input first name');
+            var workerSecondName = prompt('input second Name');
+            var workerAge = +prompt('input age');
+            var workerOccupation = prompt('input occupation');
+            var worker = {
+               firstName: workerFirstName,
+               secondName: workerSecondName,
+               age : workerAge,
+               occupation: workerOccupation,
+               show: function () {
+                  console.log("First name: " + this.firstName);
+                  console.log("Second name: " + this.secondName);
+                  console.log("Age: " + this.age);
+                  console.log("Occupation: " + this.occupation);
+               },
+            };
+            worker.show();
+            workers.push(worker);
+         
+         } while (confirm('input next worker?'));
+
+         console.log('Длина массива: ' +  workers.length);
+         console.log(workers);
+   
+         // -----------task-4---------------
+         console.log('task-4');
+
+         var sal = new Array();
+         for (i = 0; i < workers.length; i++) {
+            sal[i] = workers[i];
+         };
+
+         function salaryWorker (i) {
+            for ( i = 0; i < workers.length; i++) {
+               switch (sal[i].occupation) {
+                  case "director": 
+                     sal[i].salary = 3000;
+                     break;
+                  case "manager": 
+                     sal[i].salary = 1500;
+                     break;
+                  case "programmer": 
+                     sal[i].salary = 2000;
+                     break;
+                  default: 
+                     sal[i].salary = 1000;
+                     break;
+               };
+               console.log(sal[i]);
+            }
+         };
+         salaryWorker (i);
+
+         // -----------task-5---------------
+         console.log('task-5');
+         param = prompt('укажите параметр для сортировки: firstName, secondName, age, occupation, salary');
+         
+         function sort(arr, param) {
+            function sortWorker(a, b) {
+               if (a[param] > b[param]) return 1;
+               if (a[param] < b[param]) return -1;
+               return 0;
+            };
+            arr.sort(sortWorker);
+         };
+         sort(workers, param);
+         console.log(workers);
+               
+      </script>
+
+   </body>
+   </html>
+>>>>>>> 0cccfc66ef93a2fd02666e2314e9b28f75dff73a
